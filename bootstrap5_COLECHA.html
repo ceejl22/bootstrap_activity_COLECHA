@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 | Modern Web Development Studio</title>
+
+    
+    <link href="bootstrap5/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <style>
+        :root {
+            --brand-primary: #4f46e5;
+            --brand-secondary: #7c3aed;
+            --brand-accent: #10b981;
+            --brand-dark: #0f172a;
+            --brand-light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .navbar-custom {
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #7c3aed 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            height: 440px;
+        }
+        .carousel-slide-1 {
+            background: linear-gradient(135deg, #0284c7 0%, #0d9488 100%);
+        }
+        .carousel-slide-2 {
+            background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
+        }
+        .carousel-slide-3 {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+        }
+
+        .hover-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.15) !important;
+        }
+
+        .feature-icon-wrapper {
+            width: 72px;
+            height: 72px;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.15) 100%);
+            color: var(--brand-primary);
+        }
+
+        .btn-brand-primary {
+            background-color: var(--brand-primary);
+            color: #ffffff;
+            border: none;
+            font-weight: 600;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50rem;
+            transition: all 0.2s ease;
+        }
+        .btn-brand-primary:hover {
+            background-color: #4338ca;
+            color: #ffffff;
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4);
+        }
+
+        .btn-brand-accent {
+            background-color: var(--brand-accent);
+            color: #ffffff;
+            border: none;
+            font-weight: 600;
+        }
+        .btn-brand-accent:hover {
+            background-color: #059669;
+            color: #ffffff;
+        }
+
+        .pricing-pro-card {
+            border: 2px solid var(--brand-primary) !important;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top shadow-sm py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" href="#home">
+                <i class="bi bi-bootstrap-fill me-2 text-warning fs-3"></i>
+                <span>Colecha<span class="text-warning">Studio</span></span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fs-6 fw-medium gap-lg-2 align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#carousel-section">Highlights</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-outline-light rounded-circle px-2 py-1" id="themeToggleBtn" title="Toggle Theme">
+                            <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <header id="home" class="hero-gradient text-white py-5">
+        <div class="container py-5 text-center">
+            <span class="badge bg-white text-primary px-3 py-2 mb-3 rounded-pill fw-semibold text-uppercase tracking-wide shadow-sm">Web Development Suite</span>
+            <h1 class="display-3 fw-bold mb-3 text-white">Craft Fast, Responsive Sites</h1>
+            <p class="lead mx-auto mb-4 text-white-50 fs-5" style="max-width: 750px;">
+                Accelerate your front-end workflow with modern Bootstrap 5 components, intuitive flexbox grid layouts, and clean utility styling.
+            </p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                <a href="#pricing" class="btn btn-brand-accent btn-lg px-4 shadow">Explore Plans</a>
+                <a href="#carousel-section" class="btn btn-outline-light btn-lg px-4 rounded-pill">View Components</a>
+            </div>
+        </div>
+    </header>
+
+    
+    <section id="carousel-section" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold display-6">Interactive Component Showcase</h2>
+                <p class="text-muted fs-6">Swipe through key concepts powered by Bootstrap 5</p>
+            </div>
+            
+            <div id="bootstrapCarousel" class="carousel slide rounded-4 shadow-lg overflow-hidden" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#bootstrapCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#bootstrapCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#bootstrapCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active carousel-slide-1">
+                        <div class="d-flex align-items-center justify-content-center h-100 text-white text-center p-4">
+                            <div>
+                                <i class="bi bi-grid-3x3-gap-fill display-2 mb-3"></i>
+                                <h3 class="fw-bold display-6">12-Column Flexbox Grid</h3>
+                                <p class="fs-5 max-w-600 opacity-90">Design fluid and fully adaptable layouts for smartphones, tablets, and wide monitors.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item carousel-slide-2">
+                        <div class="d-flex align-items-center justify-content-center h-100 text-white text-center p-4">
+                            <div>
+                                <i class="bi bi-cpu-fill display-2 mb-3"></i>
+                                <h3 class="fw-bold display-6">Modular JS Plugins</h3>
+                                <p class="fs-5 max-w-600 opacity-90">Lightweight interactive components including Modals, Carousels, and Offcanvas drawers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item carousel-slide-3">
+                        <div class="d-flex align-items-center justify-content-center h-100 text-white text-center p-4">
+                            <div>
+                                <i class="bi bi-palette-fill display-2 mb-3"></i>
+                                <h3 class="fw-bold display-6">Utility-First Styling</h3>
+                                <p class="fs-5 max-w-600 opacity-90">Rapidly style custom interfaces with comprehensive utility classes for spacing and flexbox.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#bootstrapCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon p-3 bg-dark bg-opacity-50 rounded-circle" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#bootstrapCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon p-3 bg-dark bg-opacity-50 rounded-circle" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="features" class="py-5 border-top border-bottom">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-6">Core Framework Highlights</h2>
+                <p class="text-muted">Built for efficient development and responsive scalability</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0 shadow-sm hover-card text-center rounded-4">
+                        <div class="card-body">
+                            <div class="feature-icon-wrapper mb-4">
+                                <i class="bi bi-phone fs-2"></i>
+                            </div>
+                            <h4 class="card-title fw-bold">Mobile-First Layouts</h4>
+                            <p class="card-text text-muted">Optimized for handheld viewports first, automatically expanding to desktop screen sizes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0 shadow-sm hover-card text-center rounded-4">
+                        <div class="card-body">
+                            <div class="feature-icon-wrapper mb-4">
+                                <i class="bi bi-sliders fs-2"></i>
+                            </div>
+                            <h4 class="card-title fw-bold">Sass Styling Controls</h4>
+                            <p class="card-text text-muted">Customize brand themes, color variables, breakpoints, and component states effortlessly.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0 shadow-sm hover-card text-center rounded-4">
+                        <div class="card-body">
+                            <div class="feature-icon-wrapper mb-4">
+                                <i class="bi bi-shield-check fs-2"></i>
+                            </div>
+                            <h4 class="card-title fw-bold">Built-in Accessibility</h4>
+                            <p class="card-text text-muted">Equipped with standard ARIA attributes and keyboard controls for accessible navigation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="pricing" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-6">Toolkit & Development Plans</h2>
+                <p class="text-muted">Select the tier that best matches your project scale</p>
+            </div>
+
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm hover-card rounded-4">
+                        <div class="card-body p-4 text-center">
+                            <h3 class="fw-bold mb-3">Starter Kit</h3>
+                            <p class="text-muted small">Ideal for students learning front-end fundamentals</p>
+                            <div class="my-4">
+                                <span class="display-5 fw-bold">₱0</span>
+                                <span class="text-muted">/ lifetime</span>
+                            </div>
+                            <ul class="list-unstyled text-start mb-4 fs-6">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Access Core Grid Docs</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Basic UI Component Snippets</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Community Forum Access</li>
+                                <li class="mb-2 text-muted"><i class="bi bi-x-circle me-2"></i> Premium Admin Templates</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100 rounded-pill py-2 fw-semibold">Get Started Free</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card shadow-lg hover-card rounded-4 position-relative pricing-pro-card">
+                        <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-primary px-3 py-2 fw-semibold">
+                            MOST POPULAR
+                        </span>
+                        <div class="card-body p-4 text-center">
+                            <h3 class="fw-bold mb-3">Developer Pro</h3>
+                            <p class="text-muted small">Tailored for freelance developers and IT students</p>
+                            <div class="my-4">
+                                <span class="display-4 fw-bold text-primary">₱129</span>
+                                <span class="text-muted">/ month</span>
+                            </div>
+                            <ul class="list-unstyled text-start mb-4 fs-6">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Everything in Starter</strong></li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Full Admin Dashboard Templates</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Custom Sass Theme Builder</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Priority Email Support</li>
+                            </ul>
+                            <button class="btn btn-brand-primary w-100 rounded-pill py-2 shadow">Upgrade to Pro</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm hover-card rounded-4">
+                        <div class="card-body p-4 text-center">
+                            <h3 class="fw-bold mb-3">Enterprise Tier</h3>
+                            <p class="text-muted small">For software agencies and production teams</p>
+                            <div class="my-4">
+                                <span class="display-5 fw-bold">₱239</span>
+                                <span class="text-muted">/ month</span>
+                            </div>
+                            <ul class="list-unstyled text-start mb-4 fs-6">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Everything in Pro</strong></li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Unlimited Seats & Licenses</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> 1-on-1 Code Review Sessions</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Dedicated Tech Support</li>
+                            </ul>
+                            <button class="btn btn-outline-primary w-100 rounded-pill py-2 fw-semibold">Contact Sales</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="testimonials" class="py-5 border-top border-bottom">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-6">Developer Reviews</h2>
+                <p class="text-muted">Feedback from web developers and designers</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0 shadow-sm hover-card rounded-4">
+                        <div class="card-body">
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="card-text text-muted mb-4 fs-6 italic">
+                                "Bootstrap 5 cut our web layout development time significantly. The responsive flexbox grid system is smooth and reliable!"
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-person-circle fs-2 text-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Ronelia N.</h6>
+                                    <small class="text-muted">Senior Front-End Dev</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0 shadow-sm hover-card rounded-4">
+                        <div class="card-body">
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="card-text text-muted mb-4 fs-6 italic">
+                                "The utility classes and sleek UI cards make designing modern web interfaces very efficient."
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-person-circle fs-2 text-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Rhian G.</h6>
+                                    <small class="text-muted">UI/UX Designer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 p-4 border-0 shadow-sm hover-card rounded-4">
+                        <div class="card-body">
+                            <div class="text-warning mb-3">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="card-text text-muted mb-4 fs-6 italic">
+                                "Great framework structure. Everything links properly out of the box without needing heavy third-party libraries."
+                            </p>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-person-circle fs-2 text-primary me-3"></i>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Tine V.</h6>
+                                    <small class="text-muted">Full-Stack Engineer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="contact" class="py-5">
+        <div class="container py-4" style="max-width: 650px;">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold display-6">Technical Support Inquiry</h2>
+                <p class="text-muted">Have questions regarding Bootstrap integration? Drop a message below.</p>
+            </div>
+            
+            <form id="contactForm" class="p-4 p-md-5 rounded-4 shadow-sm border">
+                <div class="mb-3">
+                    <label for="name" class="form-label fw-semibold">Full Name</label>
+                    <input type="text" class="form-control form-control-lg fs-6" id="name" name="name" placeholder="Juan Dela Cruz" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label fw-semibold">Email Address</label>
+                    <input type="email" class="form-control form-control-lg fs-6" id="email" name="email" placeholder="name@example.com" required>
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label fw-semibold">Subject</label>
+                    <input type="text" class="form-control form-control-lg fs-6" id="subject" name="subject" placeholder="e.g. Carousel Setup Question" required>
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="form-label fw-semibold">Message</label>
+                    <textarea class="form-control form-control-lg fs-6" id="message" name="message" rows="4" placeholder="Type your technical question here..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-brand-primary w-100 py-3 shadow">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0 text-white-50 small">&copy; 2026 ColechaStudio. Built with Bootstrap 5 & SweetAlert2.</p>
+        </div>
+    </footer>
+
+    
+    <script src="bootstrap5/js/bootstrap.bundle.min.js"></script>
+
+    
+    <script>
+        
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            themeIcon.className = newTheme === 'dark' ? 'bi bi-sun-fill text-warning' : 'bi bi-moon-stars-fill';
+        });
+
+        
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            Swal.fire({
+                title: 'Inquiry Submitted!',
+                text: 'Thank you for reaching out. We will respond to your message shortly.',
+                icon: 'success',
+                confirmButtonColor: '#4f46e5',
+                customClass: {
+                    popup: 'rounded-4'
+                }
+            });
+            this.reset();
+        });
+    </script>
+</body>
+</html>
